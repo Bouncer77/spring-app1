@@ -7,9 +7,14 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="beanId"
-          class="com.bouncer77.spring.learn.MyBean">
-        <constructor-arg value="Ivan"/>
+    <bean id="ClassicalMusicBean"
+          class="com.bouncer77.spring.learn.ClassicalMusic">
+        <constructor-arg value="ClassicalMusic"/>
+    </bean>
+
+    <bean id="RockMusicBean"
+          class="com.bouncer77.spring.learn.RockMusic">
+        <constructor-arg value="RockMusic"/>
     </bean>
 
 </beans>

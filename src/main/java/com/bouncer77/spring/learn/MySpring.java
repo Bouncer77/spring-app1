@@ -12,9 +12,9 @@ public class MySpring {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        MyBean myBean = context.getBean("beanId", MyBean.class);
-
-        System.out.println(myBean);
+        Music music = context.getBean("RockMusicBean", Music.class);
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.playMusic();
 
         context.close();
     }
