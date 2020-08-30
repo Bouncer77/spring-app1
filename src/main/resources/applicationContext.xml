@@ -17,4 +17,9 @@
         <constructor-arg value="RockMusic"/>
     </bean>
 
+    <bean id="MusicPlayerBean"
+          class="com.bouncer77.spring.learn.MusicPlayer">
+        <constructor-arg ref="RockMusicBean"/>
+    </bean>
+
 </beans>

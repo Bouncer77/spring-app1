@@ -12,8 +12,7 @@ public class MySpring {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Music music = context.getBean("RockMusicBean", Music.class);
-        MusicPlayer musicPlayer = new MusicPlayer(music);
+        MusicPlayer musicPlayer = context.getBean("MusicPlayerBean", MusicPlayer.class);
         musicPlayer.playMusic();
 
         context.close();
