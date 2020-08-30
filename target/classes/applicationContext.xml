@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="musicPlayer.properties"/>
+
     <bean id="ClassicalMusicBean"
           class="com.bouncer77.spring.learn.ClassicalMusic">
         <constructor-arg value="ClassicalMusic"/>
@@ -17,9 +19,11 @@
         <constructor-arg value="RockMusic"/>
     </bean>
 
-    <bean id="MusicPlayerBean"
+    <bean id="MusicPlayer"
           class="com.bouncer77.spring.learn.MusicPlayer">
         <constructor-arg ref="RockMusicBean"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
