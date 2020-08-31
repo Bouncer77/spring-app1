@@ -1,5 +1,8 @@
 package com.bouncer77.spring.learn;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Kosenkov Ivan
  * Created by Kosenkov Ivan on 28.08.2020
@@ -7,18 +10,21 @@ package com.bouncer77.spring.learn;
 
 public class MusicPlayer {
 
-    private Music music;
+    private List<Music> musicList = new ArrayList<>();
 
     private String name;
     private int volume;
 
+    public MusicPlayer() {}
+
     // IoC
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
+    /*public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
+    }*/
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: ");
+        musicList.forEach(a -> System.out.println(a.getSong()));
     }
 
     public void setName(String name) {
@@ -32,9 +38,17 @@ public class MusicPlayer {
     @Override
     public String toString() {
         return "MusicPlayer{" +
-                "music=" + music.getSong() +
+                "musicListSize=" + musicList.size() +
                 ", name='" + name + '\'' +
                 ", volume=" + volume +
                 '}';
+    }
+
+    public void setMusicList(List musicList) {
+        this.musicList = musicList;
+    }
+
+    public List<Music> getMusicList() {
+        return musicList;
     }
 }

@@ -13,8 +13,8 @@ public class MySpring {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
         MusicPlayer musicPlayer = context.getBean("MusicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer);
         musicPlayer.playMusic();
-        System.out.println(musicPlayer.toString());
 
         context.close();
     }

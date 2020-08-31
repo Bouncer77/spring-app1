@@ -11,17 +11,30 @@
 
     <bean id="ClassicalMusicBean"
           class="com.bouncer77.spring.learn.ClassicalMusic">
-        <constructor-arg value="ClassicalMusic"/>
+        <constructor-arg value="ClassicalMusic song name"/>
     </bean>
 
     <bean id="RockMusicBean"
           class="com.bouncer77.spring.learn.RockMusic">
-        <constructor-arg value="RockMusic"/>
+        <constructor-arg value="RockMusic song name"/>
+    </bean>
+
+    <bean id="JazzMusicBean"
+          class="com.bouncer77.spring.learn.JazzMusic">
+        <constructor-arg value="JazzMusic song name"/>
     </bean>
 
     <bean id="MusicPlayer"
           class="com.bouncer77.spring.learn.MusicPlayer">
-        <constructor-arg ref="RockMusicBean"/>
+
+        <property name="musicList">
+            <list>
+                <ref bean="RockMusicBean"/>
+                <ref bean="ClassicalMusicBean"/>
+                <ref bean="JazzMusicBean"/>
+            </list>
+        </property>
+
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
