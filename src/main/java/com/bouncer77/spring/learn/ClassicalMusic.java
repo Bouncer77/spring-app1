@@ -1,21 +1,19 @@
 package com.bouncer77.spring.learn;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author Kosenkov Ivan
  * Created by Kosenkov Ivan on 28.08.2020
  */
 
+@Component("classicalMusicId")
 public class ClassicalMusic implements Music {
 
     private String name;
 
-    // factory-method
-    public static ClassicalMusic getInstance(String name) {
-        return new ClassicalMusic(name);
-    }
-
-    private ClassicalMusic(String name) {
-        this.name = name;
+    public ClassicalMusic() {
+        this.name = "Classical song name";
     }
 
     public void setName(String name) {

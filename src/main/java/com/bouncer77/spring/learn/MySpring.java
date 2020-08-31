@@ -12,24 +12,14 @@ public class MySpring {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        MusicPlayer mp1 = context.getBean("MusicPlayer", MusicPlayer.class);
-        MusicPlayer mp2 = context.getBean("MusicPlayer", MusicPlayer.class);
+        Music rock = context.getBean("rockMusicId", RockMusic.class);
+        Music classical = context.getBean("classicalMusicId", ClassicalMusic.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer.setMusic(rock);
+        musicPlayer.playMusic();
 
-        mp1.setName("Music Player 1");
-        mp1.setVolume(77);
-
-        mp2.setName("Music Player 2");
-
-        System.out.println(mp1);
-        mp1.playMusic();
-        System.out.println();
-
-        System.out.println(mp2);
-        mp2.playMusic();
-        System.out.println();
-
-        System.out.println("mp1 == mp2 ? " + (mp1 == mp2));
-
+        musicPlayer.setMusic(classical);
+        musicPlayer.playMusic();
 
         context.close();
     }
