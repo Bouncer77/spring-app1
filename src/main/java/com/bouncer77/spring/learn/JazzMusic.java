@@ -7,14 +7,23 @@ package com.bouncer77.spring.learn;
 
 public class JazzMusic implements Music {
 
-    private String song;
+    private String name;
 
-    public JazzMusic(String song) {
-        this.song = song;
+    // factory-method
+    public static JazzMusic getInstance(String name) {
+        return new JazzMusic(name);
+    }
+
+    private JazzMusic(String name) {
+        this.name = name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String getSong() {
-        return song;
+        return name;
     }
 }

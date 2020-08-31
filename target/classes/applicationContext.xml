@@ -10,23 +10,33 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="ClassicalMusicBean"
-          class="com.bouncer77.spring.learn.ClassicalMusic">
+          class="com.bouncer77.spring.learn.ClassicalMusic"
+          init-method="doMyMusicInit"
+          destroy-method="doMyMusicDestroy"
+          factory-method="getInstance">
         <constructor-arg value="ClassicalMusic song name"/>
     </bean>
 
     <bean id="RockMusicBean"
-          class="com.bouncer77.spring.learn.RockMusic">
+          class="com.bouncer77.spring.learn.RockMusic"
+          init-method="doMyMusicInit"
+          destroy-method="doMyMusicDestroy"
+          factory-method="getInstance">
         <constructor-arg value="RockMusic song name"/>
     </bean>
 
     <bean id="JazzMusicBean"
-          class="com.bouncer77.spring.learn.JazzMusic">
+          class="com.bouncer77.spring.learn.JazzMusic"
+          init-method="doMyMusicInit"
+          destroy-method="doMyMusicDestroy"
+          factory-method="getInstance">
         <constructor-arg value="JazzMusic song name"/>
     </bean>
 
     <bean id="MusicPlayer"
           class="com.bouncer77.spring.learn.MusicPlayer"
-          scope="prototype">
+          scope="prototype"
+          init-method="doMyInit">
 
         <constructor-arg name="name" value="${musicPlayer.name}"/>
         <constructor-arg name="volume" value="${musicPlayer.volume}"/>
@@ -38,6 +48,7 @@
                 <ref bean="JazzMusicBean"/>
             </list>
         </property>
+
 
     </bean>
 

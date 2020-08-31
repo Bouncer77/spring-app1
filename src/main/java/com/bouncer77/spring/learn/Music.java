@@ -7,4 +7,12 @@ package com.bouncer77.spring.learn;
 
 public interface Music {
     String getSong();
+
+    default void doMyMusicInit() {
+        System.out.println("Initialization Music");
+    }
+
+    default void doMyMusicDestroy() {
+        System.out.println("Destroy Music");
+    }
 }

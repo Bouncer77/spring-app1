@@ -36,6 +36,16 @@ public class MusicPlayer {
         musicList.forEach(a -> System.out.println(a.getSong()));
     }
 
+    // init-method
+    public void doMyInit() {
+        System.out.println("Бин MusicPlayer инициализируется");
+    }
+
+    // destroy-method
+    public void doMyDestroy() {
+        System.out.println("Бин MusicPlayer уничтожается");
+    }
+
     @Override
     public String toString() {
         return "MusicPlayer{" +
