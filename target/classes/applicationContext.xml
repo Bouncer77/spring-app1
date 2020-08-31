@@ -27,13 +27,23 @@
     <bean id="MusicPlayer"
           class="com.bouncer77.spring.learn.MusicPlayer">
 
-        <property name="musicList">
+        <constructor-arg name="musicList">
             <list>
                 <ref bean="RockMusicBean"/>
                 <ref bean="ClassicalMusicBean"/>
                 <ref bean="JazzMusicBean"/>
             </list>
-        </property>
+        </constructor-arg>
+
+        <constructor-arg name="testInt" value="10"/>
+
+        <!--<property name="musicList">
+            <list>
+                <ref bean="RockMusicBean"/>
+                <ref bean="ClassicalMusicBean"/>
+                <ref bean="JazzMusicBean"/>
+            </list>
+        </property>-->
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>

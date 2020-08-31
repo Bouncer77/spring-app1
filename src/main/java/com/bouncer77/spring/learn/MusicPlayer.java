@@ -15,12 +15,14 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
-    public MusicPlayer() {}
+    private int testInt;
+    /*public MusicPlayer() {}*/
 
     // IoC
-    /*public MusicPlayer(List<Music> musicList) {
+    public MusicPlayer(List<Music> musicList, int testInt) {
         this.musicList = musicList;
-    }*/
+        this.testInt = testInt;
+    }
 
     public void playMusic() {
         System.out.println("Playing: ");
@@ -39,14 +41,15 @@ public class MusicPlayer {
     public String toString() {
         return "MusicPlayer{" +
                 "musicListSize=" + musicList.size() +
+                ", testInt=" + testInt +
                 ", name='" + name + '\'' +
                 ", volume=" + volume +
                 '}';
     }
 
-    public void setMusicList(List musicList) {
+    /*public void setMusicList(List musicList) {
         this.musicList = musicList;
-    }
+    }*/
 
     public List<Music> getMusicList() {
         return musicList;
